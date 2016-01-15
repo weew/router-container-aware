@@ -15,9 +15,11 @@ class ParameterResolverInvokerTest extends PHPUnit_Framework_TestCase {
         $resolver = function(SomeDependency $dependency, $parameter) use (&$shared) {
             $shared[] = $dependency;
             $shared[] = $parameter;
+
+            return $shared;
         };
 
-        $invoker->invoke($resolver, 'foo');
+        $this->assertTrue($shared === $invoker->invoke($resolver, 'foo'));
         $this->assertEquals(2, count($shared));
         $this->assertTrue($shared[0] instanceof SomeDependency);
         $this->assertEquals('foo', $shared[1]);
