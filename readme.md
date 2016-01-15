@@ -22,7 +22,7 @@ This package integrates [weew/php-router](https://github.com/weew/php-router) wi
 
 ## Usage
 
-Simply create a container aware instance of `IRouter` and pass in an instance of `IContainer`.
+Simply create a container aware instance of `Router` and pass in an instance of `IContainer`.
 
 ```php
 $commander = new Weew\Router\ContainerAware\Router(new Container());
