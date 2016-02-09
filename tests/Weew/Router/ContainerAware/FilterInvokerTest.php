@@ -14,7 +14,7 @@ class FilterInvokerTest extends PHPUnit_Framework_TestCase {
     public function test_invoke() {
         $container = new Container();
         $invoker = new FilterInvoker($container);
-        $route = new Route(HttpRequestMethod::GET, 'bar', 'baz');
+        $route = new Route([HttpRequestMethod::GET], 'bar', 'baz');
         $shared = [];
         $filter = function(SomeDependency $dependency, IRoute $route) use (&$shared) {
             $shared[] = $dependency;

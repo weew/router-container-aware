@@ -19,12 +19,12 @@ class ParameterResolverInvoker implements IParameterResolverInvoker {
     }
 
     /**
-     * @param callable $resolver
+     * @param $resolver
      * @param $parameter
      *
      * @return mixed
      */
-    public function invoke(callable $resolver, $parameter) {
+    public function invoke($resolver, $parameter) {
         return $this->container->call($resolver, ['parameter' => $parameter]);
     }
 }
