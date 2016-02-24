@@ -26,6 +26,6 @@ class FilterInvoker implements IFilterInvoker {
      * @return bool
      */
     public function invoke($filter, IRoute $route) {
-        return !! $this->container->call($filter, ['route' => $route]);
+        return $this->container->call($filter, ['route' => $route]);
     }
 }
